@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
+    <link rel="stylesheet" href="playlist.css">
+    <link rel="stylesheet" href="tab.css">
+
+    <style>
+        .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #ytplayer {
+            border-radius: 20px;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-yt" >
+                <div id="ytplayer"></div>
+                <b>What's the best country to live in</b>
+            </div>
+            <div class="col">
+                <playlist>
+                    <playlist-top>
+                        <i class="ph-caret-left"></i>
+                        <x>camilla espinosa</x>
+                        <i class="ph-playlist-fill"></i>
+                    </playlist-top>
+                    <div class="tabs">
+                        <div class="tab-item active">
+                            Nghe bắt âm
+                        </div>
+                        <div class="tab-item">
+                            Nghe vận dụng
+                        </div>
+                        <div class="tab-item">
+                            Nghe chi tiết
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <!-- 
+                    <playlist-header>
+                        <img src="https://s3.amazonaws.com/bit-photos/large/10423453.jpeg">
+                        <playlist-info style="background-image:url()">
+                            <playlist-title>crack in your glass</playlist-title>
+                            <playlist-subtitle>character playlist</playlist-subtitle>
+                        </playlist-info>
+                        <playlist-play><i class="ph-play-fill"></i></playlist-play>
+                    </playlist-header> -->
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <playlist-songs class="playlist " id="lyric-container">
+                            </playlist-songs>
+                        </div>
+                        <div class="tab-pane ">
+                            <playlist-songs class="playlist" id="quiz-container">
+
+                            </playlist-songs>
+                            <playlist-bottom class="test-bottom">
+                                <button type="button" disabled class="btn-check">Kiểm tra</button>
+                                <!-- <playlist-play>Kiểm tra</playlist-play> -->
+                                <div class="test-info">
+                                </div>
+
+                            </playlist-bottom>
+                        </div>
+                        <div class="tab-pane ">
+
+                        </div>
+                    </div>
+
+                    <!-- <lyric-background>Lyrics <i class="ph-caret-up"></i></lyric-background> -->
+
+                </playlist>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+<script>
+    let data = [
+        {
+            "start": 7.712,
+            "end": 10.214,
+            "text": "What’s the best country in the world to live in?",
+            "id": 1
+        },
+        {
+            "start": 10.298,
+            "end": 13.885,
+            "text": "Is it the one with the best food? The longest life expectancy?",
+            "id": 2
+        },
+        {
+            "start": 14.01,
+            "end": 15.386,
+            "text": "The best weather?",
+            "id": 3
+        },
+        {
+            "start": 15.47,
+            "end": 20.183,
+            "text": "For the past 70 years, most governments have relied heavily on a single number",
+            "id": 4
+        },
+        {
+            "start": 20.183,
+            "end": 21.476,
+            "text": "to answer that question.",
+            "id": 5
+        },
+        {
+            "start": 21.726,
+            "end": 25.688,
+            "text": "This number influences elections, the stock market, and government policy.",
+            "id": 6
+        },
+        {
+            "start": 25.813,
+            "end": 28.149,
+            "text": "But it was never intended for its current purpose;",
+            "id": 7
+        },
+        {
+            "start": 28.149,
+            "end": 33.071,
+            "text": "and some would argue that the world is addicted to making it grow... forever.",
+            "id": 8
+        },
+        {
+            "start": 33.488,
+            "end": 36.991,
+            "text": "This number is called the Gross Domestic Product, or GDP,",
+            "id": 9
+        },
+        {
+            "start": 37.116,
+            "end": 40.953,
+            "text": "and it was invented by the economist Simon Kuznets in the 1930s,",
+            "id": 10
+        },
+        {
+            "start": 40.953,
+            "end": 45.041,
+            "text": "to try and gauge the size of an economy in a single, easy to understand number.",
+            "id": 11
+        },
+        {
+            "start": 45.458,
+            "end": 48.669,
+            "text": "GDP is the total monetary value of everything a country",
+            "id": 12
+        },
+        {
+            "start": 48.669,
+            "end": 50.922,
+            "text": "produces and sells on the market.",
+            "id": 13
+        },
+        {
+            "start": 50.922,
+            "end": 53.091,
+            "text": "To this day, GDP per capita,",
+            "id": 14
+        },
+        {
+            "start": 53.091,
+            "end": 57.178,
+            "text": "which is just the total GDP divided by the number of people living in that country,",
+            "id": 15
+        },
+        {
+            "start": 57.178,
+            "end": 59.639,
+            "text": "is widely seen as a measure of well-being.",
+            "id": 16
+        },
+        {
+            "start": 59.931,
+            "end": 62.934,
+            "text": "But GDP doesn’t actually say anything direct about well-being,",
+            "id": 17
+        },
+        {
+            "start": 62.934,
+            "end": 65.77,
+            "text": "because it doesn't take into account what a country produces",
+            "id": 18
+        },
+        {
+            "start": 65.77,
+            "end": 67.396,
+            "text": "or who has access to it.",
+            "id": 19
+        },
+        {
+            "start": 67.563,
+            "end": 71.776,
+            "text": "A million dollars of weapons contributes the exact same amount to a country’s GDP",
+            "id": 20
+        },
+        {
+            "start": 71.776,
+            "end": 74.362,
+            "text": "as a million dollars of vaccines or food.",
+            "id": 21
+        },
+        {
+            "start": 74.821,
+            "end": 78.574,
+            "text": "The value society derives from things like public school or firefighters",
+            "id": 22
+        },
+        {
+            "start": 78.574,
+            "end": 82.829,
+            "text": "isn’t counted in GDP at all, because those services aren’t sold on the market.",
+            "id": 23
+        },
+        {
+            "start": 83.121,
+            "end": 85.123,
+            "text": "And if a country has a lot of wealth,",
+            "id": 24
+        },
+        {
+            "start": 85.123,
+            "end": 88.167,
+            "text": "but most of it is controlled by relatively few people,",
+            "id": 25
+        },
+        {
+            "start": 88.167,
+            "end": 92.839,
+            "text": "GDP per capita gives a distorted picture of how much money a typical person has.",
+            "id": 26
+        },
+        {
+            "start": 93.381,
+            "end": 95.133,
+            "text": "Despite all that, for a long time,",
+            "id": 27
+        },
+        {
+            "start": 95.133,
+            "end": 98.386,
+            "text": "higher GDP did correlate closely to a higher quality of life",
+            "id": 28
+        },
+        {
+            "start": 98.386,
+            "end": 99.929,
+            "text": "for people in many countries.",
+            "id": 29
+        },
+        {
+            "start": 100.346,
+            "end": 104.976,
+            "text": "From 1945 to 1970, as GDP doubled, tripled or even quadrupled",
+            "id": 30
+        },
+        {
+            "start": 104.976,
+            "end": 106.686,
+            "text": "in some western economies,",
+            "id": 31
+        },
+        {
+            "start": 106.686,
+            "end": 109.48,
+            "text": "people’s wages often grew proportionally.",
+            "id": 32
+        },
+        {
+            "start": 109.605,
+            "end": 111.649,
+            "text": "By the 1980s, this changed.",
+            "id": 33
+        },
+        {
+            "start": 111.899,
+            "end": 113.818,
+            "text": "Countries continued to grow richer,",
+            "id": 34
+        },
+        {
+            "start": 113.818,
+            "end": 116.654,
+            "text": "but wages stopped keeping pace with GDP growth,",
+            "id": 35
+        },
+        {
+            "start": 116.654,
+            "end": 118.573,
+            "text": "or in some cases, even declined,",
+            "id": 36
+        },
+        {
+            "start": 118.573,
+            "end": 122.451,
+            "text": "and most of the benefits went to an ever-smaller percentage of the population.",
+            "id": 37
+        },
+        {
+            "start": 122.743,
+            "end": 126.455,
+            "text": "Still, the idea of capturing a nation’s well-being in a single number",
+            "id": 38
+        },
+        {
+            "start": 126.455,
+            "end": 128.457,
+            "text": "had powerful appeal.",
+            "id": 39
+        },
+        {
+            "start": 128.499,
+            "end": 132.086,
+            "text": "In 1972, King Jigme Singye Wangchuk of Bhutan",
+            "id": 40
+        },
+        {
+            "start": 132.086,
+            "end": 135.173,
+            "text": "came up with the idea of Gross National Happiness",
+            "id": 41
+        },
+        {
+            "start": 135.173,
+            "end": 137.466,
+            "text": "as an alternative to Gross Domestic Product.",
+            "id": 42
+        },
+        {
+            "start": 137.633,
+            "end": 140.511,
+            "text": "Gross National Happiness is a metric that factors in matters",
+            "id": 43
+        },
+        {
+            "start": 140.511,
+            "end": 143.89,
+            "text": "like health, education, strong communities, and living standards,",
+            "id": 44
+        },
+        {
+            "start": 143.89,
+            "end": 145.85,
+            "text": "having citizens answer questions like,",
+            "id": 45
+        },
+        {
+            "start": 145.85,
+            "end": 148.853,
+            "text": "“How happy do you think your family members are at the moment?”",
+            "id": 46
+        },
+        {
+            "start": 149.228,
+            "end": 152.94,
+            "text": "“What is your knowledge of names of plants and wild animals in your area?”",
+            "id": 47
+        },
+        {
+            "start": 152.94,
+            "end": 155.443,
+            "text": "and “What type of day was yesterday?”",
+            "id": 48
+        },
+        {
+            "start": 156.068,
+            "end": 159.739,
+            "text": "The United Nations’ Human Development Index is a more widely used metric;",
+            "id": 49
+        },
+        {
+            "start": 159.739,
+            "end": 162.116,
+            "text": "it takes into account health and education,",
+            "id": 50
+        },
+        {
+            "start": 162.116,
+            "end": 165.328,
+            "text": "as well as income per capita to estimate overall well-being.",
+            "id": 51
+        },
+        {
+            "start": 165.87,
+            "end": 168.915,
+            "text": "Meanwhile, a metric called the Sustainable Development Index",
+            "id": 52
+        },
+        {
+            "start": 168.915,
+            "end": 173.544,
+            "text": "factors in both well-being and the environmental burdens of economic growth,",
+            "id": 53
+        },
+        {
+            "start": 173.544,
+            "end": 176.13,
+            "text": "again, boiling all this down to a single number.",
+            "id": 54
+        },
+        {
+            "start": 176.13,
+            "end": 178.007,
+            "text": "Though no country has been able to meet",
+            "id": 55
+        },
+        {
+            "start": 178.007,
+            "end": 179.717,
+            "text": "the basic needs of its people while",
+            "id": 56
+        },
+        {
+            "start": 179.717,
+            "end": 182.22,
+            "text": "also using resources fully sustainably,",
+            "id": 57
+        },
+        {
+            "start": 182.22,
+            "end": 184.222,
+            "text": "Costa Rica currently comes the closest.",
+            "id": 58
+        },
+        {
+            "start": 184.472,
+            "end": 185.723,
+            "text": "Over the past few decades,",
+            "id": 59
+        },
+        {
+            "start": 185.723,
+            "end": 189.31,
+            "text": "it’s managed to grow its economy and improve living standards substantially",
+            "id": 60
+        },
+        {
+            "start": 189.31,
+            "end": 192.021,
+            "text": "without drastically increasing its emissions.",
+            "id": 61
+        },
+        {
+            "start": 192.021,
+            "end": 194.023,
+            "text": "Other countries, like Colombia and Jordan,",
+            "id": 62
+        },
+        {
+            "start": 194.023,
+            "end": 195.775,
+            "text": "have made notable progress.",
+            "id": 63
+        },
+        {
+            "start": 196.025,
+            "end": 199.153,
+            "text": "Costa Rica now has better well-being outcomes like life expectancy",
+            "id": 64
+        },
+        {
+            "start": 199.153,
+            "end": 201.53,
+            "text": "than some of the world’s richest countries.",
+            "id": 65
+        },
+        {
+            "start": 201.822,
+            "end": 204.533,
+            "text": "Ultimately, there are limits to any approach that boils",
+            "id": 66
+        },
+        {
+            "start": 204.533,
+            "end": 207.37,
+            "text": "the quality of life in a country down to a single number.",
+            "id": 67
+        },
+        {
+            "start": 207.662,
+            "end": 211.332,
+            "text": "Increasingly, experts favor a dashboard approach that lays out all the factors",
+            "id": 68
+        },
+        {
+            "start": 211.332,
+            "end": 212.959,
+            "text": "a single number obscures.",
+            "id": 69
+        },
+        {
+            "start": 212.959,
+            "end": 216.796,
+            "text": "This approach makes even more sense given that people have different priorities,",
+            "id": 70
+        },
+        {
+            "start": 216.796,
+            "end": 219.215,
+            "text": "and the answer to which country is best to live in",
+            "id": 71
+        },
+        {
+            "start": 219.215,
+            "end": 221.3,
+            "text": "depends on who’s asking the question.",
+            "id": 72
+        },
+        {
+            "start": 221.3,
+            "end": 224.553,
+            "text": "So what if that were you designing your countries well-being metric?",
+            "id": 73
+        },
+        {
+            "start": 224.553,
+            "end": 227.056,
+            "text": "What do you value, and what would you measure?",
+            "id": 74
+        }
+    ]
+    getScript()
+    function getScript() {
+        let content = ""
+        data.forEach(item => {
+            content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
+                <input class="d-none" type="radio" name="Script"  id="radio-${item.id}">
+                <song-info>
+                            <b>${item.text}</b>
+                        </song-info>
+                        <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
+                    </song>
+                    `
+        });
+        $("#lyric-container").html(content)
+        let playList = document.getElementsByClassName('playlist');
+    }
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    var videoId = "EqJcNnijmdQ"
+
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+            height: '288',
+            width: '512',
+            videoId: videoId,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            },
+
+        });
+    }
+    // 2. get player.playerInfo.currentTime
+    const subtitlesContainer = document.getElementById('lyric-container');
+    function scrollSubtitle(currentSubtitle) {
+        const top = currentSubtitle.offsetTop;
+        const height = currentSubtitle.offsetHeight;
+        const containerHeight = subtitlesContainer.offsetHeight;
+        const scrollTop = subtitlesContainer.scrollTop;
+        const scrollBottom = scrollTop + containerHeight;
+        if (top < scrollTop || top + height > scrollBottom) {
+            subtitlesContainer.scrollTo({
+                top: top - containerHeight + height / 2,
+                behavior: 'smooth'
+            });
+        }
+
+    }
+    let subInterval;
+    function startSubInterval() {
+        subInterval = setInterval(function () {
+            let currentTime = player.playerInfo.currentTime
+            let currentSubtitle = Array.from(subtitlesContainer.children)
+                .find(function (sub) {
+                    const startTime = parseFloat(sub.dataset.start);
+                    const endTime = parseFloat(sub.dataset.end);
+                    return startTime <= currentTime && endTime >= currentTime;
+                });
+
+            if (currentSubtitle) {
+                scrollSubtitle(currentSubtitle)
+                activeScript(currentSubtitle.dataset.id)
+            }
+        }, 500)
+    }
+    function onPlayerStateChange(event) {
+        // If the video starts playing (state = 1), execute setInterval
+        if (event.data == YT.PlayerState.PLAYING) {
+            startSubInterval()
+        }
+        // If the video is paused (state = 2), clear the interval
+        else if (event.data == YT.PlayerState.PAUSED) {
+            clearInterval(subInterval);
+        }
+    }
+    $("#lyric-container").scroll(function (event) {
+        // clearInterval(subInterval)
+        // setTimeout(() => {
+        // startSubInterval()
+        // }, 3000);
+    })
+    function activeScript(id) {
+        $(`#radio-${id}`).prop("checked", "checked");
+        $(".song").removeClass('song-active');
+        $(`#song-${id}`).addClass('song-active');
+        $(".song-heart").removeClass('ph-heart-straight-fill');
+        $(".song-heart").addClass('ph-heart-straight');
+        $(`#song-heart-${id}`).addClass('ph-heart-straight-fill');
+    }
+    function onPlayerReady(event) {
+        let start = subtitlesContainer.children[0].dataset.start
+        let id = subtitlesContainer.children[0].dataset.id
+        player.seekTo(parseFloat(start)); // Start playing at 30 seconds
+        activeScript(id)
+        $('song').click(function (e) {
+            let id = $(this).attr('data-id');
+            let start = $(this).attr('data-start');
+            activeScript(id)
+            player.seekTo(parseFloat(start)); // Start playing at 30 seconds
+            player.playVideo();
+        })
+    }
+
+    function random(quantity) {
+        // Set the minimum and maximum values for the range
+        var min = 0;
+        let max = data.length
+        // var max = 30;
+
+        // Create an empty array to store the random numbers
+        var randomNumbers = [];
+
+        // Loop until we've added 15 unique random numbers
+        while (randomNumbers.length < quantity) {
+            // Generate a random number between min and max, inclusive
+            var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            // Check whether the random number is already in the array
+            if (!randomNumbers.includes(randomNumber)) {
+                // If not, add it to the array
+                randomNumbers.push(randomNumber);
+            }
+        }
+        // Log the array of random numbers to the console
+        return randomNumbers
+    }
+    let quantity = 2
+    // let arrRandom = random(quantity)
+    // console.log(arrRandom)
+    let arrRandom = [1, 2]
+    let dataQuiz = JSON.parse(JSON.stringify(data));
+    let arrAnswer = []
+    quiz()
+    function quiz() {
+        dataQuiz.forEach(item => {
+            if (arrRandom.findIndex(function (element) {
+                return element === item.id;
+            }) !== -1) {
+                // If it does, add it to the matchingIds array
+                let arrScript = item.text.split(" ")
+                let min = 0
+                let randomNumber = Math.floor(Math.random() * (arrScript.length - min + 1)) + min;
+                let object = {
+                    "id": item.id,
+                    "val": arrScript[randomNumber],
+                    "index": randomNumber
+                }
+                arrScript[randomNumber] = null
+                item.flag = randomNumber
+                item.text = arrScript
+                arrAnswer.push(object)
+            }
+        });
+    }
+    getQuiz()
+    function getQuiz() {
+        let content = ""
+        dataQuiz.forEach(item => {
+            let text = ""
+            if (typeof item.text == "string") {
+                text = `<b>${item.text}</b>`
+            } else {
+                // console.log(item.script)
+                let flag = item.flag
+                text += '<b>'
+                item.text.forEach((element, index) => {
+                    if (index === flag) {
+                        text += `</b>
+                                <input  data-id ="${item.id}" type="text" id="question-${item.id}" 
+                                class="form-control w-50 input-answer">
+                                <b>
+                                    `
+                    }
+                    else {
+                        text += element + " "
+                    }
+
+                });
+                text += `</b>`
+
+            }
+            content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
+                            <input class="d-none" type="radio" name="Script"    id="radio-${item.id}">
+                            <song-info>
+                                <song-details>
+                                    ${text}
+                                </song-details>
+                                <x class="d-none" id="invalid-${item.id}">OKOKOK</x>
+                            </song-info>
+                            <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
+                        </song>`
+        });
+        $("#quiz-container").html(content)
+        let text = `<x>Đáp án đúng: </x><b>0/${quantity}</b>`
+        $(".test-info").html(text)
+    }
+    let arrAnswerUsers = []
+    $("#count-answer").text(arrAnswerUsers.length + "/15")
+    $(".input-answer").keyup(function (event) {
+        let id = $(this).data("id");
+        let val = $(`#question-${id}`).val();
+        if (val === "") {
+            let index = arrAnswerUsers.findIndex(item => item.id === id);
+            if (index !== -1) {
+                arrAnswerUsers.splice(index, 1)
+            }
+        } else {
+            let result = arrAnswerUsers.find(item => item.id === id);
+            if (result) {
+                result.val = val
+            } else {
+                let obj = {
+                    id: id,
+                    val: val
+                }
+                arrAnswerUsers.push(obj);
+            }
+        }
+        countAnswer()
+    })
+    function countAnswer() {
+        let count = arrAnswerUsers.length
+        let content = `<x>Đã trả lời: </x><b>${count}/${quantity}</b>`
+        $(".test-info").html(content)
+        if (count == 2) {
+            $('.btn-check').removeAttr("disabled");
+        } else {
+            $('.btn-check').attr("disabled", true);
+        }
+    }
+    $('.btn-check').click(function () {
+        let arrIncorrect = []
+        let arrCorrect = []
+        let numberCorrect = 0
+        arrAnswer.forEach(item1 => {
+            arrAnswerUsers.forEach(item2 => {
+                if (item1.id == item2.id) {
+                    if (item1.val.toLowerCase() == item2.val.toLowerCase()) {
+                        numberCorrect++
+                        arrCorrect.push(item1)
+                    } else {
+                        arrIncorrect.push(item1)
+                    }
+                }
+            })
+        })
+        if (arrIncorrect.length > 0) {
+            arrIncorrect.forEach(function (item) {
+                $(`#question-${item.id}`).addClass('is-invalid')
+                $(`#invalid-${item.id}`).removeClass('d-none')
+                $(`#invalid-${item.id}`).text(`Đáp án đúng: ${item.val}`)
+            })
+        }
+        if (arrCorrect.length > 0) {
+            arrCorrect.forEach(function (item) {
+                $(`#question-${item.id}`).addClass('is-valid')
+            })
+        }
+        let content = `<x>Đáp án đúng: </x><b>${numberCorrect}/${quantity}</b>`
+        $(".test-info").html(content)
+
+        // if ()
+    })
+    // What’s the best country in the world to live in?
+    //Is it the one with the best food? The longest life expectancy?
+</script>
+<script src="tab.js"></script>
+<script src="playlist.js"></script>
+
+</html>
