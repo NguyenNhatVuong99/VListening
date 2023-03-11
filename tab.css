@@ -1,18 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: "Poppins", sans-serif;
+:root{
+    --red:#f0002f
 }
-
-body>div {
-    margin: 5% auto 0;
-    max-width: 720px;
-}
-
 .tabs {
     padding-left: 25px;
     padding-right: 25px;
@@ -27,22 +16,22 @@ body>div {
     width: 0;
     height: 6px;
     border-radius: 15px;
-    background-color: #c23564;
+    background-color: #f0002f;
     transition: all 0.2s ease;
 }
 
 .tab-item {
-
+    font-weight: 500;
     flex: 1;
-    padding: 16px 20px 11px 20px;
-    font-size: 20px;
+    padding: 16px 20px 5px 20px;
+    font-size: 18px;
     text-align: center;
-    color: #c23564;
+    color: #777;
     background-color: #fff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 5px solid transparent;
-    opacity: 0.6;
+    opacity: 0.9;
     cursor: pointer;
     transition: all 0.5s ease;
 }
@@ -62,6 +51,7 @@ body>div {
 
 .tab-item.active {
     opacity: 1;
+    color: var(--red);
 }
 
 .tab-content {

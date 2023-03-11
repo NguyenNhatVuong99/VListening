@@ -2,30 +2,26 @@
     --bg1: #fff;
     --bg2: #eee;
     --r1: 197, 124, 145;
-    --h1: #C57C91;
+    --h1: #f0002f;
     --b1: #aaa;
     --body: #444;
     --headerfont: montserrat;
     --bodyfont: work sans;
     --smallfont: work sans;
+    --red:#f0002f
 }
 
 
-* {
-    box-sizing: border-box;
-}
+
 
 img {
     object-fit: cover;
 }
-
-body {
-    background-image: linear-gradient(to top right, rgba(var(--r1), 0.4), var(--bg1));
-    background-size: cover;
-    background-attachment: fixed;
-    color: var(--body);
-    margin: 40px 0;
-    font: 400 12px var(--bodyfont);
+.w-50{
+    width: 50%;
+}
+.w-40{
+    width: 40%;
 }
 
 .col-yt {
@@ -36,13 +32,14 @@ body {
 }
 .col-yt b{
     margin-top : 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 playlist {
     width: 480px;
     margin: 0 auto;
-    background-image: linear-gradient(to bottom left, var(--bg1) 30%, var(--bg2));
+    border: 1px solid var(--h1);
+    /* background-image: linear-gradient(to bottom left, var(--bg1) 30%, var(--bg2)); */
     border-radius: 10px;
     /* box-shadow: 0 0 70px rgba(20, 20, 20, 0.2); */
     display: flex;
@@ -128,34 +125,17 @@ playlist-subtitle {
     margin-top: 3px;
 }
 
-button {
-    width: 150px;
-    height: 50px;
-    border-radius: 20px;
-    background: #c23564;
-    ;
-    display: flex;
-    /* position: absolute; */
-    top: calc(50% - 25px);
-    /* right: 25px; */
-    color: var(--bg1);
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 0 0 25px rgba(20, 20, 20, 0.2); */
-    z-index: 2;
-    cursor: pointer;
-}
+
 
 button:hover {
     background: #c44367;
 }
 
-button:disabled,
+/* button:disabled,
 button[disabled] {
     background-color: #cccccc;
     color: #666666;
-}
+} */
 
 playlist-songs {
     width: calc(100% - 25px);
@@ -164,7 +144,7 @@ playlist-songs {
     flex-direction: column;
     justify-content: flex-start;
     counter-reset: songs;
-    height: 260px;
+    height: 300px;
     overflow: auto;
     margin: 25px 0 0 0;
 }
@@ -220,14 +200,26 @@ song-details input {
 }
 
 song-info b {
-    font: 500 15px var(--headerfont);
+    font: 600 15px var(--headerfont);
+    animation: fadeIn 1s;
 }
+
 
 song-info x {
-    font: 600 15px var(--bodyfont);
+    font: 500 14px var(--bodyfont);
     margin-top: 3px;
-}
+    animation: fadeIn 1s;
 
+
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}   
 song i {
     color: var(--h1);
     font-size: 20px;
@@ -235,17 +227,16 @@ song i {
 
 playlist-bottom {
     width: calc(100% - 50px);
-    height: 165px;
+    height: 120px;
     display: flex;
     margin: 0 25px 0 25px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
 }
 
 .test-bottom {
-    height: 120px;
+    height: 80px;
     margin-top: 30px;
     justify-content: space-around;
 
@@ -270,11 +261,12 @@ x {
 .test-bottom button {}
 
 playlist-bottom i {
+    cursor: pointer;
     font-size: 24px;
     margin: 0 25px;
 }
 
-playlist-bottom i:nth-child(3) {
+playlist-bottom i:nth-child(2) {
     display: flex;
     background: var(--body);
     border-radius: 50%;
@@ -358,4 +350,7 @@ playlist-songs:hover~lyric-background {
 
 .d-none {
     display: none !important;
+}
+.d-block{
+    display: block !important;;
 }

@@ -2,567 +2,1105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/phosphor-icons"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V.Listen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./logo99.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="playlist.css">
-    <link rel="stylesheet" href="tab.css">
+  <link href="https://fonts.googleapis.com/css?family=Unica+One%7CWork+Sans:300,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="personal.css">
+  <link rel="stylesheet" href="tab.css">
+  <link rel="stylesheet" href="playlist.css">
 
-    <style>
-        .col {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #ytplayer {
-            border-radius: 20px;
-        }
-
-        .d-none {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col col-yt" >
-                <div id="ytplayer"></div>
-                <b>What's the best country to live in</b>
-            </div>
-            <div class="col">
-                <playlist>
-                    <playlist-top>
-                        <i class="ph-caret-left"></i>
-                        <x>camilla espinosa</x>
-                        <i class="ph-playlist-fill"></i>
-                    </playlist-top>
-                    <div class="tabs">
-                        <div class="tab-item active">
-                            Nghe bắt âm
-                        </div>
-                        <div class="tab-item">
-                            Nghe vận dụng
-                        </div>
-                        <div class="tab-item">
-                            Nghe chi tiết
-                        </div>
-                        <div class="line"></div>
-                    </div>
-                    <!-- 
-                    <playlist-header>
-                        <img src="https://s3.amazonaws.com/bit-photos/large/10423453.jpeg">
-                        <playlist-info style="background-image:url()">
-                            <playlist-title>crack in your glass</playlist-title>
-                            <playlist-subtitle>character playlist</playlist-subtitle>
-                        </playlist-info>
-                        <playlist-play><i class="ph-play-fill"></i></playlist-play>
-                    </playlist-header> -->
-                    <div class="tab-content">
-                        <div class="tab-pane active">
-                            <playlist-songs class="playlist " id="lyric-container">
-                            </playlist-songs>
-                        </div>
-                        <div class="tab-pane ">
-                            <playlist-songs class="playlist" id="quiz-container">
 
-                            </playlist-songs>
-                            <playlist-bottom class="test-bottom">
-                                <button type="button" disabled class="btn-check">Kiểm tra</button>
-                                <!-- <playlist-play>Kiểm tra</playlist-play> -->
-                                <div class="test-info">
-                                </div>
-
-                            </playlist-bottom>
-                        </div>
-                        <div class="tab-pane ">
-
-                        </div>
-                    </div>
-
-                    <!-- <lyric-background>Lyrics <i class="ph-caret-up"></i></lyric-background> -->
-
-                </playlist>
-            </div>
+  <body data-spy="scroll" data-target="#main-nav" data-offset="60">
+    <!-- Fixed Navbar -->
+    <nav id="main-nav" class="navbar navbar-default ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- Menu Toggle -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+          </button>
+          <a class="navbar-brand scroll" href="#top"><img class="pull-left logo" src="./logo-ver.png" alt=" Logo"></a>
         </div>
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a class="scroll" href="#top">Home <span class="sr-only">(current)</span></a></li>
+            <li><a class="scroll" href="#practice">Practice</a></li>
+            <li><a class="scroll" href="#portfolio">Portfolio</a></li>
+            <li><button class="btn td-btn small outline pink" data-toggle="modal" data-target="#contactModal">Contact</button></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- Jumbotron -->
+    <header id="top" class="jumbotron">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <img class="img-responsive center-block logo" src="./logo-hor.png" alt="TD Logo">
+          </div>
+          <div class="col-xs-12">
+            <h2 class="title">Học, học nữa, học mãi, đừng học lại</h2>
+            <h3 class="title">Giải pháp luyện nghe tiếng anh</h3>
+            <a class="btn td-btn outline green scroll mt-30" href="#content" title="Learn more about me!"><span class="glyphicon glyphicon-triangle-bottom"></span> Learn more</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Begins -->
+    <div id="content" class="container-fluid ">
+      <!-- About Me Section -->
+      <section id="practice" class="row bg-white bg-shadow">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="mb-60 text-center">Practice</h1>
+          </div>
+        </div>
+        <div class="row mb-30">
+          <div class="col-xs-12 col-sm-6 col-yt">
+            <div id="ytplayer"></div>
+            <b>What's the best country to live in</b>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <playlist>
+              <playlist-top>
+                <i class="ph-caret-left"></i>
+                <x>What's the best country to live in</x>
+                <i class="ph-playlist-fill"></i>
+              </playlist-top>
+              <div class="tabs">
+                <div class="tab-item active">
+                  Bắt âm
+                </div>
+                <div class="tab-item">
+                  Vận dụng
+                </div>
+                <div class="tab-item">
+                  Chi tiết
+                </div>
+                <div class="line"></div>
+              </div>
+              <!-- 
+                        <playlist-header>
+                            <img src="https://s3.amazonaws.com/bit-photos/large/10423453.jpeg">
+                            <playlist-info style="background-image:url()">
+                                <playlist-title>crack in your glass</playlist-title>
+                                <playlist-subtitle>character playlist</playlist-subtitle>
+                            </playlist-info>
+                            <playlist-play><i class="ph-play-fill"></i></playlist-play>
+                        </playlist-header> -->
+              <div class="tab-content">
+                <div class="tab-pane active">
+                  <playlist-songs class="playlist " id="lyric-container">
+                  </playlist-songs>
+                  <playlist-bottom class="test-bottom">
+                    <button type="button" id="press-vietsub" class="btn  td-btn outline green scroll mt-30">Tiếng việt </button>
+                    <button type="button" id="press-engsub" class="btn  td-btn outline green scroll mt-30">Tiếng anh </button>
+                  </playlist-bottom>
+                </div>
+                <div class="tab-pane ">
+                  <playlist-songs class="playlist" id="quiz-container">
+
+                  </playlist-songs>
+                  <playlist-bottom class="test-bottom">
+                    <button type="button" disabled class="btn btn-check td-btn outline green scroll ">Kiểm tra</button>
+                    <div class="test-info">
+                    </div>
+
+                  </playlist-bottom>
+                </div>
+                <div class="tab-pane " aria-disabled="true">
+                  <playlist-songs class="playlist ">
+                    <div class="mm-survey-bottom">
+                      <div class="mm-survey-container">
+
+
+                      </div>
+                    </div>
+                  </playlist-songs>
+                </div>
+              </div>
+
+              <!-- <lyric-background>Lyrics <i class="ph-caret-up"></i></lyric-background> -->
+
+            </playlist>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-10 col-sm-offset-1">
+            <hr class="dashed">
+            <h2 class="mb-60">What I Do</h2>
+          </div>
+          <div class="col-sm-3 col-lg-2 col-lg-offset-2">
+            <img class="img-responsive center-block icon" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/work/rwd-icon.png?raw=true" alt="Responsive Web Design Icon">
+            <p>Responsive Web Design</p>
+          </div>
+          <div class="col-sm-3 col-lg-2">
+            <img class="img-responsive center-block icon" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/work/ui-ux-icon.png?raw=true" alt="UI/UX Design Icon">
+            <p>UI/UX Design</p>
+          </div>
+          <div class="col-sm-3 col-lg-2">
+            <img class="img-responsive center-block icon" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/work/dev-icon.png?raw=true" alt="Development Icon">
+            <p>Development</p>
+          </div>
+          <div class="col-sm-3 col-lg-2 mb-30">
+            <img class="img-responsive center-block icon" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/work/star-icon.png?raw=true" alt="Identity and Branding Icon">
+            <p>Identity &amp; Branding</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- <button class="btn td-btn outline green mt-30" data-toggle="modal" data-target="#resumeModal">View my Resume</button> -->
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="row bg-star-y text-center">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="mb-60">Portfolio</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div id="projects" class="carousel slide col-xs-12" data-ride="carousel" data-interval="false">
+            <div class="row">
+              <!-- Carousel Prev Button -->
+              <div class="col-xs-1">
+                <a class="left carousel-control" href="#projects" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </div>
+              <div class="col-xs-10">
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <div class="col-sm-7">
+                      <img class="img-responsive center-block mb-30" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/tribute/tribute-teaser.png?raw=true" alt="Twenty One Pilots Tribute Page">
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="carousel-caption card">
+                        <h3>Twenty One Pilots Tribute</h3>
+                        <h4>Responsive Web Design</h4>
+                        <button class="btn td-btn small outline green" data-toggle="modal" data-target="#tributeModal">View Details</button>
+                      </div>
+                    </div>
+                  </div><!-- /.item -->
+                  <div class="item">
+                    <div class="col-sm-7">
+                      <img class="img-responsive center-block mb-30" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/tms/tms-teaser.png?raw=true" alt="Too Much Sauce">
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="carousel-caption card">
+                        <h3>Too Much Sauce</h3>
+                        <h4>Responsive Web Design</h4>
+                        <button class="btn td-btn small outline green" data-toggle="modal" data-target="#tmsModal">View Details</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="col-sm-7">
+                      <img class="img-responsive center-block mb-30" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/rb/rb-teaser.png?raw=true" alt="Ryan Bechtel">
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="carousel-caption card">
+                        <h3>Ryan Bechtel</h3>
+                        <h4>Responsive Web Design</h4>
+                        <button class="btn td-btn small outline green" data-toggle="modal" data-target="#rbModal">View Details</button>
+                      </div>
+                    </div>
+                  </div><!-- /.item -->
+                </div><!-- /.carousel-inner -->
+              </div>
+              <div class="col-xs-1">
+                <!-- Carousel Next Button -->
+                <a class="right carousel-control" href="#projects" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div><!-- / Next Btn -->
+              <div class="col-xs-12">
+                <!-- Indicators -->
+                <ol class="carousel-indicators mt-30">
+                  <li data-target="#projects" data-slide-to="0" class="active"></li>
+                  <li data-target="#projects" data-slide-to="1"></li>
+                  <li data-target="#projects" data-slide-to="2"></li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /#projects -->
+        </div><!-- /.row -->
+      </section>
+      <!-- Contact Me Section -->
+      <section class="row bg-pink bg-shadow text-center">
+        <div class="col-xs-12">
+          <h1 class="mb-30">Like what you see?</h1>
+          <button class="btn btn-default td-btn outline white" data-toggle="modal" data-target="#contactModal">Send me a message!</button>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="row text-left bg-honeycomb">
+        <div class="col-xs-12 col-sm-6">
+          <h3>Latest Tweet</h3>
+          <div class="card mb-30">
+            <a class="twitter-timeline" href="" data-widget-id="329035628920573952" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="1" data-width="100%">Tweets by @dusign</a>
+            <script>
+              ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                  p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = p + "://platform.twitter.com/widgets.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, "script", "twitter-wjs");
+            </script>
+          </div>
+        </div>
+        <div id="follow-me" class="col-xs-12 col-sm-5 col-sm-offset-1 mb-30">
+          <h3>Follow me!</h3>
+          <a class="social" href=""  title="LinkedIn">
+            <img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/LinkedIn-black.png?raw=true" alt="LinkedIn Icon">
+          </a>
+          <a class="social"  title="Twitter">
+            <img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/Twitter-black.png?raw=true" alt="Twitter Icon">
+          </a>
+          <a class="social"  title="Instagram">
+            <img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/Instagram-black.png?raw=true" alt="Instagram Icon">
+          </a>
+          <a class="social" title="Github">
+            <img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/Github-black.png?raw=true" alt="Github Icon">
+          </a>
+          <a class="social" title="Codepen">
+            <img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/Codepen-black.png?raw=true" alt="Codepen Icon">
+          </a>
+        </div>
+        <div class="col-xs-12 text-center">
+          <hr class="dashed">
+          <h2>&ndash; Thanks for visiting! &ndash;</h2>
+          <small class="gray">Copyright &copy; <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script> Nhất Vương &mdash; All Rights Reserved &mdash; Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></small>
+        </div>
+      </footer>
     </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
-    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
-<script>
-    let data = [
-        {
-            "start": 7.712,
-            "end": 10.214,
-            "text": "What’s the best country in the world to live in?",
-            "id": 1
-        },
-        {
-            "start": 10.298,
-            "end": 13.885,
-            "text": "Is it the one with the best food? The longest life expectancy?",
-            "id": 2
-        },
-        {
-            "start": 14.01,
-            "end": 15.386,
-            "text": "The best weather?",
-            "id": 3
-        },
-        {
-            "start": 15.47,
-            "end": 20.183,
-            "text": "For the past 70 years, most governments have relied heavily on a single number",
-            "id": 4
-        },
-        {
-            "start": 20.183,
-            "end": 21.476,
-            "text": "to answer that question.",
-            "id": 5
-        },
-        {
-            "start": 21.726,
-            "end": 25.688,
-            "text": "This number influences elections, the stock market, and government policy.",
-            "id": 6
-        },
-        {
-            "start": 25.813,
-            "end": 28.149,
-            "text": "But it was never intended for its current purpose;",
-            "id": 7
-        },
-        {
-            "start": 28.149,
-            "end": 33.071,
-            "text": "and some would argue that the world is addicted to making it grow... forever.",
-            "id": 8
-        },
-        {
-            "start": 33.488,
-            "end": 36.991,
-            "text": "This number is called the Gross Domestic Product, or GDP,",
-            "id": 9
-        },
-        {
-            "start": 37.116,
-            "end": 40.953,
-            "text": "and it was invented by the economist Simon Kuznets in the 1930s,",
-            "id": 10
-        },
-        {
-            "start": 40.953,
-            "end": 45.041,
-            "text": "to try and gauge the size of an economy in a single, easy to understand number.",
-            "id": 11
-        },
-        {
-            "start": 45.458,
-            "end": 48.669,
-            "text": "GDP is the total monetary value of everything a country",
-            "id": 12
-        },
-        {
-            "start": 48.669,
-            "end": 50.922,
-            "text": "produces and sells on the market.",
-            "id": 13
-        },
-        {
-            "start": 50.922,
-            "end": 53.091,
-            "text": "To this day, GDP per capita,",
-            "id": 14
-        },
-        {
-            "start": 53.091,
-            "end": 57.178,
-            "text": "which is just the total GDP divided by the number of people living in that country,",
-            "id": 15
-        },
-        {
-            "start": 57.178,
-            "end": 59.639,
-            "text": "is widely seen as a measure of well-being.",
-            "id": 16
-        },
-        {
-            "start": 59.931,
-            "end": 62.934,
-            "text": "But GDP doesn’t actually say anything direct about well-being,",
-            "id": 17
-        },
-        {
-            "start": 62.934,
-            "end": 65.77,
-            "text": "because it doesn't take into account what a country produces",
-            "id": 18
-        },
-        {
-            "start": 65.77,
-            "end": 67.396,
-            "text": "or who has access to it.",
-            "id": 19
-        },
-        {
-            "start": 67.563,
-            "end": 71.776,
-            "text": "A million dollars of weapons contributes the exact same amount to a country’s GDP",
-            "id": 20
-        },
-        {
-            "start": 71.776,
-            "end": 74.362,
-            "text": "as a million dollars of vaccines or food.",
-            "id": 21
-        },
-        {
-            "start": 74.821,
-            "end": 78.574,
-            "text": "The value society derives from things like public school or firefighters",
-            "id": 22
-        },
-        {
-            "start": 78.574,
-            "end": 82.829,
-            "text": "isn’t counted in GDP at all, because those services aren’t sold on the market.",
-            "id": 23
-        },
-        {
-            "start": 83.121,
-            "end": 85.123,
-            "text": "And if a country has a lot of wealth,",
-            "id": 24
-        },
-        {
-            "start": 85.123,
-            "end": 88.167,
-            "text": "but most of it is controlled by relatively few people,",
-            "id": 25
-        },
-        {
-            "start": 88.167,
-            "end": 92.839,
-            "text": "GDP per capita gives a distorted picture of how much money a typical person has.",
-            "id": 26
-        },
-        {
-            "start": 93.381,
-            "end": 95.133,
-            "text": "Despite all that, for a long time,",
-            "id": 27
-        },
-        {
-            "start": 95.133,
-            "end": 98.386,
-            "text": "higher GDP did correlate closely to a higher quality of life",
-            "id": 28
-        },
-        {
-            "start": 98.386,
-            "end": 99.929,
-            "text": "for people in many countries.",
-            "id": 29
-        },
-        {
-            "start": 100.346,
-            "end": 104.976,
-            "text": "From 1945 to 1970, as GDP doubled, tripled or even quadrupled",
-            "id": 30
-        },
-        {
-            "start": 104.976,
-            "end": 106.686,
-            "text": "in some western economies,",
-            "id": 31
-        },
-        {
-            "start": 106.686,
-            "end": 109.48,
-            "text": "people’s wages often grew proportionally.",
-            "id": 32
-        },
-        {
-            "start": 109.605,
-            "end": 111.649,
-            "text": "By the 1980s, this changed.",
-            "id": 33
-        },
-        {
-            "start": 111.899,
-            "end": 113.818,
-            "text": "Countries continued to grow richer,",
-            "id": 34
-        },
-        {
-            "start": 113.818,
-            "end": 116.654,
-            "text": "but wages stopped keeping pace with GDP growth,",
-            "id": 35
-        },
-        {
-            "start": 116.654,
-            "end": 118.573,
-            "text": "or in some cases, even declined,",
-            "id": 36
-        },
-        {
-            "start": 118.573,
-            "end": 122.451,
-            "text": "and most of the benefits went to an ever-smaller percentage of the population.",
-            "id": 37
-        },
-        {
-            "start": 122.743,
-            "end": 126.455,
-            "text": "Still, the idea of capturing a nation’s well-being in a single number",
-            "id": 38
-        },
-        {
-            "start": 126.455,
-            "end": 128.457,
-            "text": "had powerful appeal.",
-            "id": 39
-        },
-        {
-            "start": 128.499,
-            "end": 132.086,
-            "text": "In 1972, King Jigme Singye Wangchuk of Bhutan",
-            "id": 40
-        },
-        {
-            "start": 132.086,
-            "end": 135.173,
-            "text": "came up with the idea of Gross National Happiness",
-            "id": 41
-        },
-        {
-            "start": 135.173,
-            "end": 137.466,
-            "text": "as an alternative to Gross Domestic Product.",
-            "id": 42
-        },
-        {
-            "start": 137.633,
-            "end": 140.511,
-            "text": "Gross National Happiness is a metric that factors in matters",
-            "id": 43
-        },
-        {
-            "start": 140.511,
-            "end": 143.89,
-            "text": "like health, education, strong communities, and living standards,",
-            "id": 44
-        },
-        {
-            "start": 143.89,
-            "end": 145.85,
-            "text": "having citizens answer questions like,",
-            "id": 45
-        },
-        {
-            "start": 145.85,
-            "end": 148.853,
-            "text": "“How happy do you think your family members are at the moment?”",
-            "id": 46
-        },
-        {
-            "start": 149.228,
-            "end": 152.94,
-            "text": "“What is your knowledge of names of plants and wild animals in your area?”",
-            "id": 47
-        },
-        {
-            "start": 152.94,
-            "end": 155.443,
-            "text": "and “What type of day was yesterday?”",
-            "id": 48
-        },
-        {
-            "start": 156.068,
-            "end": 159.739,
-            "text": "The United Nations’ Human Development Index is a more widely used metric;",
-            "id": 49
-        },
-        {
-            "start": 159.739,
-            "end": 162.116,
-            "text": "it takes into account health and education,",
-            "id": 50
-        },
-        {
-            "start": 162.116,
-            "end": 165.328,
-            "text": "as well as income per capita to estimate overall well-being.",
-            "id": 51
-        },
-        {
-            "start": 165.87,
-            "end": 168.915,
-            "text": "Meanwhile, a metric called the Sustainable Development Index",
-            "id": 52
-        },
-        {
-            "start": 168.915,
-            "end": 173.544,
-            "text": "factors in both well-being and the environmental burdens of economic growth,",
-            "id": 53
-        },
-        {
-            "start": 173.544,
-            "end": 176.13,
-            "text": "again, boiling all this down to a single number.",
-            "id": 54
-        },
-        {
-            "start": 176.13,
-            "end": 178.007,
-            "text": "Though no country has been able to meet",
-            "id": 55
-        },
-        {
-            "start": 178.007,
-            "end": 179.717,
-            "text": "the basic needs of its people while",
-            "id": 56
-        },
-        {
-            "start": 179.717,
-            "end": 182.22,
-            "text": "also using resources fully sustainably,",
-            "id": 57
-        },
-        {
-            "start": 182.22,
-            "end": 184.222,
-            "text": "Costa Rica currently comes the closest.",
-            "id": 58
-        },
-        {
-            "start": 184.472,
-            "end": 185.723,
-            "text": "Over the past few decades,",
-            "id": 59
-        },
-        {
-            "start": 185.723,
-            "end": 189.31,
-            "text": "it’s managed to grow its economy and improve living standards substantially",
-            "id": 60
-        },
-        {
-            "start": 189.31,
-            "end": 192.021,
-            "text": "without drastically increasing its emissions.",
-            "id": 61
-        },
-        {
-            "start": 192.021,
-            "end": 194.023,
-            "text": "Other countries, like Colombia and Jordan,",
-            "id": 62
-        },
-        {
-            "start": 194.023,
-            "end": 195.775,
-            "text": "have made notable progress.",
-            "id": 63
-        },
-        {
-            "start": 196.025,
-            "end": 199.153,
-            "text": "Costa Rica now has better well-being outcomes like life expectancy",
-            "id": 64
-        },
-        {
-            "start": 199.153,
-            "end": 201.53,
-            "text": "than some of the world’s richest countries.",
-            "id": 65
-        },
-        {
-            "start": 201.822,
-            "end": 204.533,
-            "text": "Ultimately, there are limits to any approach that boils",
-            "id": 66
-        },
-        {
-            "start": 204.533,
-            "end": 207.37,
-            "text": "the quality of life in a country down to a single number.",
-            "id": 67
-        },
-        {
-            "start": 207.662,
-            "end": 211.332,
-            "text": "Increasingly, experts favor a dashboard approach that lays out all the factors",
-            "id": 68
-        },
-        {
-            "start": 211.332,
-            "end": 212.959,
-            "text": "a single number obscures.",
-            "id": 69
-        },
-        {
-            "start": 212.959,
-            "end": 216.796,
-            "text": "This approach makes even more sense given that people have different priorities,",
-            "id": 70
-        },
-        {
-            "start": 216.796,
-            "end": 219.215,
-            "text": "and the answer to which country is best to live in",
-            "id": 71
-        },
-        {
-            "start": 219.215,
-            "end": 221.3,
-            "text": "depends on who’s asking the question.",
-            "id": 72
-        },
-        {
-            "start": 221.3,
-            "end": 224.553,
-            "text": "So what if that were you designing your countries well-being metric?",
-            "id": 73
-        },
-        {
-            "start": 224.553,
-            "end": 227.056,
-            "text": "What do you value, and what would you measure?",
-            "id": 74
-        }
+
+    <!-- Resume Modal -->
+   
+    <!-- Tribute Page Project Modal -->
+    <div class="modal fade" id="tributeModal" tabindex="-1" role="dialog" aria-labelledby="tributeTitle">
+      <div class="modal-dialog wide" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title text-center" id="tributeTitle">Project Details</h3>
+          </div><!-- /.modal-header -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12 bg-star-g">
+                <img class="img-responsive center-block hero" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/tribute/tribute-hero.png?raw=true" alt="Tribute Page Hero Image">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <h2>Twenty One Pilots Tribute</h2>
+                <h4>Responsive Web Design</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0">
+                <p>This tribute page was created for a <a href="https://www.freecodecamp.com/" target="_blank" title="Link to FreeCodeCamp">FreeCodeCamp</a> project. The goal was very simple: make a one-page site with images, text, and external links. I took this chance to practice using the Bootstrap 3 framework to create a tribute to one of my favorite bands at the moment, Twenty One Pilots (TOP). Lucky for me, they have such strong branding that the page nearly designed itself!</p>
+                <p class="mb-30">I kept the color palette simple with black, white, and the signature TOP shade of red for the accent color. To add some visual interest, I used a subtle twill texture for the red backgrounds and styled the headings with a black background to give it a label maker tape effect. I also wrote some code that replaces the letter "O" with the scandinavian letter "&Oslash;" in the headings and navigation links to match the TOP logo.</p>
+              </div>
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 md-center">
+                <p><strong>Technologies Used:</strong></p>
+                <p class="mb-30">
+                  <span class="label tag">Bootstrap 3</span>
+                  <span class="label tag">Responsive Design</span>
+                  <span class="label tag">HTML5</span>
+                  <span class="label tag">CSS3</span>
+                  <span class="label tag">JavaScript</span>
+                  <span class="label tag">jQuery</span>
+                </p>
+                <a class="btn td-btn outline green mb-30" href="" target="_blank" title="Link to Tribute Page"><span class="glyphicon glyphicon-link"></span> Visit Live Site</a>
+                <a class="btn td-btn outline green mb-30 iconBtn" href="" target="_blank" title="Link to Tribute Page on CodePen"><img src="https://github.com/tiffanyadu/portfolio/blob/master/assets/icons/social/Codepen-green.png?raw=true" alt="Codepen Icon">View on CodePen</a>
+              </div>
+            </div><!-- /.row -->
+            <div class="modal-footer center">
+              <button type="button" class="btn td-btn outline small" data-dismiss="modal">Close Project</button>
+            </div><!-- /.modal-footer -->
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Too Much Sauce Project Modal -->
+    <div class="modal fade" id="tmsModal" tabindex="-1" role="dialog" aria-labelledby="tmsTitle">
+      <div class="modal-dialog wide" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title text-center" id="tmsTitle">Project Details</h3>
+          </div><!-- /.modal-header -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12 bg-star-g">
+                <img class="img-responsive center-block hero" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/tms/tms-hero.png?raw=true" alt="Too Much Sauce Hero Image">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <h2>Too Much Sauce</h2>
+                <h4>Responsive Web Design</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0">
+                <p>Too Much Sauce (TMS) is a side project of motion graphic designer Ryan Bechtel, where he challenges himself to create brutalist designs. The purpose of the TMS website is to host his collection of animated GIFs, which were originally shared as Instagram stories.</p>
+                <p class="mb-30">Ryan really liked the bold, high-contrast look of <a href="http://www.complex.com/" target="_blank" title="Complex.com">Complex.com</a>, a music and pop culture media/news website, so that's what inspired the design of this project. The color palette is mainly black and white with splashes of magenta and neon green from the TMS brand. It was built with the latest version of Bootstrap 4 and uses a small JavaScript library, <a href="https://github.com/krasimir/gifffer" target="_blank" title="Gifffer.js Github repo">Gifffer.js</a>, to prevent the animated GIFs from autoplaying when the page loads.</p>
+              </div>
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 md-center">
+                <p><strong>Technologies Used:</strong></p>
+                <p class="mb-30">
+                  <span class="label tag">Bootstrap 4</span>
+                  <span class="label tag">Responsive Design</span>
+                  <span class="label tag">HTML5</span>
+                  <span class="label tag">CSS3</span>
+                  <span class="label tag">jQuery</span>
+                  <span class="label tag">Gifffer.js</span>
+                </p>
+                <a class="btn td-btn outline green mb-30" href="http://tms.ryanbechtel.com/" target="_blank" title="Link to Too Much Sauce"><span class="glyphicon glyphicon-link"></span> Visit Live Site</a>
+              </div>
+            </div><!-- /.row -->
+            <div class="modal-footer center">
+              <button type="button" class="btn td-btn outline small" data-dismiss="modal">Close Project</button>
+            </div><!-- /.modal-footer -->
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Ryan Bechtel Project Modal -->
+    <div class="modal fade" id="rbModal" tabindex="-1" role="dialog" aria-labelledby="rbTitle">
+      <div class="modal-dialog wide" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title text-center" id="rbTitle">Project Details</h3>
+          </div><!-- /.modal-header -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12 bg-star-g">
+                <img class="img-responsive center-block hero" src="https://github.com/tiffanyadu/portfolio/blob/master/assets/portfolio/rb/rb-hero.png?raw=true" alt="Ryan Bechtel Hero Image">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <h2>Ryan Bechtel</h2>
+                <h4>Responsive Web Design</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0">
+                <p>This project was for Ryan Bechtel, a motion graphic designer in Chicago, IL. His main goal was to attract prospective clients for freelance jobs, so he wanted a website that showcases some of his best work.</p>
+                <p class="mb-30">I kept the design of this website simple to help Ryan's work stand out. His reel (AKA a video portfolio) is the most important piece of content, probably the first thing his future clients would look for, so it is placed front and center on the landing page. To make the embedded videos responsive and looking good on all devices, I used a jQuery plugin called <a href="http://fitvidsjs.com/" target="_blank" title="Fitvids.js library">FitVids.js</a>, which gives the videos a fluid width. For the contact form, I used <a href="https://github.com/PHPMailer/PHPMailer" target="_blank" title="PHPMailer Plugin">PHPMailer</a>, an email sending library for PHP, to make it functional and also coded in a "honeypot" to help prevent spam. Other than the two plugins I just mentioned, the rest of this website was completely hand-coded.</p>
+              </div>
+              <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 md-center">
+                <p><strong>Technologies Used:</strong></p>
+                <p class="mb-30">
+                  <span class="label tag">Responsive Design</span>
+                  <span class="label tag">HTML5</span>
+                  <span class="label tag">CSS3</span>
+                  <span class="label tag">PHP</span>
+                  <span class="label tag">PHPMailer</span>
+                  <span class="label tag">FitVids.js</span>
+                </p>
+                <a class="btn td-btn outline green mb-30" href="http://ryanbechtel.com/" target="_blank" title="Link to ryanbechtel.com"><span class="glyphicon glyphicon-link"></span> Visit Live Site</a>
+              </div>
+            </div><!-- /.row -->
+            <div class="modal-footer center">
+              <button type="button" class="btn td-btn outline small" data-dismiss="modal">Close Project</button>
+            </div><!-- /.modal-footer -->
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactTitle">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-pink">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="contactTitle">Contact Me</h3>
+          </div><!-- /.modal-header -->
+          <div class="modal-body">
+            <form class="mb-15">
+              <div class="form-group">
+                <label class="sr-only" for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="message">Message</label>
+                <textarea class="form-control" id="message" rows="6" placeholder="Your message here..." required></textarea>
+              </div>
+              <small>*All fields are required</small>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> I'm a robot!
+                </label>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn td-btn outline small white" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn td-btn outline small white">Send Message</button>
+            </div><!-- /.modal-footer -->
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="personal.js"></script>
+
+  <script>
+    let data = [{
+        start: 7.712,
+        end: 10.214,
+        text: 'What’s the best country in the world to live in?',
+        id: 1,
+        vietsub: 'Đâu là nước đáng sống nhất trên thế giới?'
+      },
+      {
+        start: 10.298,
+        end: 13.885,
+        text: 'Is it the one with the best food? The longest life expectancy?',
+        id: 2,
+        vietsub: 'Nước có nhiều món ăn ngon? Nước có tuổi thọ cao nhất?'
+      },
+      {
+        start: 14.01,
+        end: 15.386,
+        text: 'The best weather?',
+        id: 3,
+        vietsub: 'Hay nước có khí hậu ôn hòa?'
+      },
+      {
+        start: 15.47,
+        end: 20.183,
+        text: 'For the past 70 years, most governments have relied heavily on a single number',
+        id: 4,
+        vietsub: '70 năm qua, đa phần mọi chính phủ đều chủ yếu dựa vào một con số duy nhất'
+      },
+      {
+        start: 20.183,
+        end: 21.476,
+        text: 'to answer that question.',
+        id: 5,
+        vietsub: 'để trả lời câu hỏi này.'
+      },
+      {
+        start: 21.726,
+        end: 25.688,
+        text: 'This number influences elections, the stock market, and government policy.',
+        id: 6,
+        vietsub: 'Con số này ảnh hưởng đến bầu cử, chứng khoán, chính sách chính phủ.'
+      },
+      {
+        start: 25.813,
+        end: 28.149,
+        text: 'But it was never intended for its current purpose;',
+        id: 7,
+        vietsub: 'Không ai nghĩ nó được sử dụng như hiện nay,'
+      },
+      {
+        start: 28.149,
+        end: 33.071,
+        text: 'and some would argue that the world is addicted to making it grow... forever.',
+        id: 8,
+        vietsub: 'và một số người cho rằng'
+      },
+      {
+        start: 33.488,
+        end: 36.991,
+        text: 'This number is called the Gross Domestic Product, or GDP,',
+        id: 9,
+        vietsub: 'thế giới đắm chìm trong việc phát triển.. không ngừng.'
+      },
+      {
+        start: 37.116,
+        end: 40.953,
+        text: 'and it was invented by the economist Simon Kuznets in the 1930s,',
+        id: 10,
+        vietsub: 'Con số này được gọi là Tổng sản phẩm quốc nội hay GDP,'
+      },
+      {
+        start: 40.953,
+        end: 45.041,
+        text: 'to try and gauge the size of an economy in a single, easy to understand number.',
+        id: 11,
+        vietsub: 'được nhà kinh tế học Simon Kuznets tạo ra vào những năm 1930,'
+      },
+      {
+        start: 45.458,
+        end: 48.669,
+        text: 'GDP is the total monetary value of everything a country',
+        id: 12,
+        vietsub: 'tìm cách đánh giá quy mô một nền kinh tế bằng một con số duy nhất, dễ hiểu.'
+      },
+      {
+        start: 48.669,
+        end: 50.922,
+        text: 'produces and sells on the market.',
+        id: 13,
+        vietsub: 'GDP là tổng các giá trị tiền tệ của một nước'
+      },
+      {
+        start: 50.922,
+        end: 53.091,
+        text: 'To this day, GDP per capita,',
+        id: 14,
+        vietsub: 'sản xuất và bán ra thị trường.'
+      },
+      {
+        start: 53.091,
+        end: 57.178,
+        text: 'which is just the total GDP divided by the number of people living in that country,',
+        id: 15,
+        vietsub: 'Ngày nay, GDP bình quân đầu người,'
+      },
+      {
+        start: 57.178,
+        end: 59.639,
+        text: 'is widely seen as a measure of well-being.',
+        id: 16,
+        vietsub: 'tổng GDP chia cho tổng số dân của nước đó,'
+      },
+      {
+        start: 59.931,
+        end: 62.934,
+        text: 'But GDP doesn’t actually say anything direct about well-being,',
+        id: 17,
+        vietsub: 'được nhiều người xem là thước đo hạnh phúc.'
+      },
+      {
+        start: 62.934,
+        end: 65.77,
+        text: "because it doesn't take into account what a country produces",
+        id: 18,
+        vietsub: 'Nhưng GDP không trực tiếp chỉ ra các yếu tố mang lại hạnh phúc,'
+      },
+      {
+        start: 65.77,
+        end: 67.396,
+        text: 'or who has access to it.',
+        id: 19,
+        vietsub: 'vì nó không xem xét đến sản phẩm nước đó tạo ra'
+      },
+      {
+        start: 67.563,
+        end: 71.776,
+        text: 'A million dollars of weapons contributes the exact same amount to a country’s GDP',
+        id: 20,
+        vietsub: 'hay ai có khả năng tiếp cận nó.'
+      },
+      {
+        start: 71.776,
+        end: 74.362,
+        text: 'as a million dollars of vaccines or food.',
+        id: 21,
+        vietsub: 'Một triệu đô vũ khí đóng góp vào GDP một nước tương đương với'
+      },
+      {
+        start: 74.821,
+        end: 78.574,
+        text: 'The value society derives from things like public school or firefighters',
+        id: 22,
+        vietsub: 'một triệu đô cho vắc-xin hay lương thực.'
+      },
+      {
+        start: 78.574,
+        end: 82.829,
+        text: 'isn’t counted in GDP at all, because those services aren’t sold on the market.',
+        id: 23,
+        vietsub: 'Giá trị xã hội bắt nguồn từ những thứ như trường học hay lính cứu hỏa'
+      },
+      {
+        start: 83.121,
+        end: 85.123,
+        text: 'And if a country has a lot of wealth,',
+        id: 24,
+        vietsub: 'không được tính vào GDP vì chúng không được bán trên thị trường.'
+      },
+      {
+        start: 85.123,
+        end: 88.167,
+        text: 'but most of it is controlled by relatively few people,',
+        id: 25,
+        vietsub: 'Nếu một nước giàu'
+      },
+      {
+        start: 88.167,
+        end: 92.839,
+        text: 'GDP per capita gives a distorted picture of how much money a typical person has.',
+        id: 26,
+        vietsub: 'nhưng phần lớn của cải lại nằm trong tay một ít người,'
+      },
+      {
+        start: 93.381,
+        end: 95.133,
+        text: 'Despite all that, for a long time,',
+        id: 27,
+        vietsub: 'GDP đầu người sẽ tạo ra một bức tranh sai lệch'
+      },
+      {
+        start: 95.133,
+        end: 98.386,
+        text: 'higher GDP did correlate closely to a higher quality of life',
+        id: 28,
+        vietsub: 'về số tiền một người bình thường sở hữu.'
+      },
+      {
+        start: 98.386,
+        end: 99.929,
+        text: 'for people in many countries.',
+        id: 29,
+        vietsub: 'Dù vậy, trong một thời gian dài,'
+      },
+      {
+        start: 100.346,
+        end: 104.976,
+        text: 'From 1945 to 1970, as GDP doubled, tripled or even quadrupled',
+        id: 30,
+        vietsub: 'GDP liên quan mật thiết'
+      },
+      {
+        start: 104.976,
+        end: 106.686,
+        text: 'in some western economies,',
+        id: 31,
+        vietsub: 'với chất lượng cuộc sống của con người trong nhiều nước.'
+      },
+      {
+        start: 106.686,
+        end: 109.48,
+        text: 'people’s wages often grew proportionally.',
+        id: 32,
+        vietsub: 'Từ 1945 đến 1970, khi GDP tăng gấp đôi, gấp ba hay thậm chí bốn lần,'
+      },
+      {
+        start: 109.605,
+        end: 111.649,
+        text: 'By the 1980s, this changed.',
+        id: 33,
+        vietsub: 'ở một số nền kinh tế phương Tây,'
+      },
+      {
+        start: 111.899,
+        end: 113.818,
+        text: 'Countries continued to grow richer,',
+        id: 34,
+        vietsub: 'mức lương thường tăng theo tương ứng.'
+      },
+      {
+        start: 113.818,
+        end: 116.654,
+        text: 'but wages stopped keeping pace with GDP growth,',
+        id: 35,
+        vietsub: 'Nhưng đến năm 1980, mọi thứ thay đổi.'
+      },
+      {
+        start: 116.654,
+        end: 118.573,
+        text: 'or in some cases, even declined,',
+        id: 36,
+        vietsub: 'Các nước ngày càng giàu,'
+      },
+      {
+        start: 118.573,
+        end: 122.451,
+        text: 'and most of the benefits went to an ever-smaller percentage of the population.',
+        id: 37,
+        vietsub: 'nhưng mức lương lại không theo kịp với tốc độ tăng trưởng GDP,'
+      },
+      {
+        start: 122.743,
+        end: 126.455,
+        text: 'Still, the idea of capturing a nation’s well-being in a single number',
+        id: 38,
+        vietsub: 'đôi khi, còn giảm xuống,'
+      },
+      {
+        start: 126.455,
+        end: 128.457,
+        text: 'had powerful appeal.',
+        id: 39,
+        vietsub: 'và phần lớn lợi nhuận chảy vào túi một lượng nhỏ dân số.'
+      },
+      {
+        start: 128.499,
+        end: 132.086,
+        text: 'In 1972, King Jigme Singye Wangchuk of Bhutan',
+        id: 40,
+        vietsub: 'Tuy nhiên, ý tưởng quy hạnh phúc một nước'
+      },
+      {
+        start: 132.086,
+        end: 135.173,
+        text: 'came up with the idea of Gross National Happiness',
+        id: 41,
+        vietsub: 'về một con số có sức hấp dẫn rất lớn.'
+      },
+      {
+        start: 135.173,
+        end: 137.466,
+        text: 'as an alternative to Gross Domestic Product.',
+        id: 42,
+        vietsub: 'Năm 1972, Vua Jigme Singye Wangchuk của Butan'
+      },
+      {
+        start: 137.633,
+        end: 140.511,
+        text: 'Gross National Happiness is a metric that factors in matters',
+        id: 43,
+        vietsub: 'đưa ra ý tưởng Tổng Hạnh phúc Quốc gia'
+      },
+      {
+        start: 140.511,
+        end: 143.89,
+        text: 'like health, education, strong communities, and living standards,',
+        id: 44,
+        vietsub: 'thay cho Tổng sản phẩm quốc nội.'
+      },
+      {
+        start: 143.89,
+        end: 145.85,
+        text: 'having citizens answer questions like,',
+        id: 45,
+        vietsub: 'Tổng hạnh phúc quốc gia là thước đo các yếu tố như:'
+      },
+      {
+        start: 145.85,
+        end: 148.853,
+        text: '“How happy do you think your family members are at the moment?”',
+        id: 46,
+        vietsub: 'y tế, giáo dục, liên kết cộng đồng và tiêu chuẩn sống'
+      },
+      {
+        start: 149.228,
+        end: 152.94,
+        text: '“What is your knowledge of names of plants and wild animals in your area?”',
+        id: 47,
+        vietsub: 'yêu cầu công dân trả lời các câu hỏi như:'
+      },
+      {
+        start: 152.94,
+        end: 155.443,
+        text: 'and “What type of day was yesterday?”',
+        id: 48,
+        vietsub: '“Hiện tại, các thành viên trong gia đình có hạnh phúc nhiều không?”'
+      },
+      {
+        start: 156.068,
+        end: 159.739,
+        text: 'The United Nations’ Human Development Index is a more widely used metric;',
+        id: 49,
+        vietsub: '“Bạn biết tên cây cỏ và các loài thú quanh mình không?”'
+      },
+      {
+        start: 159.739,
+        end: 162.116,
+        text: 'it takes into account health and education,',
+        id: 50,
+        vietsub: 'và “Ngày hôm qua của bạn như thế nào?”'
+      },
+      {
+        start: 162.116,
+        end: 165.328,
+        text: 'as well as income per capita to estimate overall well-being.',
+        id: 51,
+        vietsub: 'Chỉ số phát triển con người của Liên Hợp Quốc được sử dụng rộng rãi,'
+      },
+      {
+        start: 165.87,
+        end: 168.915,
+        text: 'Meanwhile, a metric called the Sustainable Development Index',
+        id: 52,
+        vietsub: 'xem xét đến vấn đề sức khỏe và giáo dục,'
+      },
+      {
+        start: 168.915,
+        end: 173.544,
+        text: 'factors in both well-being and the environmental burdens of economic growth,',
+        id: 53,
+        vietsub: 'cũng như thu nhập bình quân đầu người để dự đoán mức độ hạnh phúc.'
+      },
+      {
+        start: 173.544,
+        end: 176.13,
+        text: 'again, boiling all this down to a single number.',
+        id: 54,
+        vietsub: 'Trong khi đó, một thước đo gọi là chỉ số phát triển bền vững'
+      },
+      {
+        start: 176.13,
+        end: 178.007,
+        text: 'Though no country has been able to meet',
+        id: 55,
+        vietsub: 'xem xét hạnh phúc và ảnh hưởng của phát triển kinh tế lên môi trường,'
+      },
+      {
+        start: 178.007,
+        end: 179.717,
+        text: 'the basic needs of its people while',
+        id: 56,
+        vietsub: 'lần nữa, quy tất cả về một con số.'
+      },
+      {
+        start: 179.717,
+        end: 182.22,
+        text: 'also using resources fully sustainably,',
+        id: 57,
+        vietsub: 'Tuy không nước nào có thể đáp ứng nhu cầu cơ bản của công dân,'
+      },
+      {
+        start: 182.22,
+        end: 184.222,
+        text: 'Costa Rica currently comes the closest.',
+        id: 58,
+        vietsub: 'và sử dụng tài nguyên bền vững,'
+      },
+      {
+        start: 184.472,
+        end: 185.723,
+        text: 'Over the past few decades,',
+        id: 59,
+        vietsub: 'Costa Rica là nước thành công nhất.'
+      },
+      {
+        start: 185.723,
+        end: 189.31,
+        text: 'it’s managed to grow its economy and improve living standards substantially',
+        id: 60,
+        vietsub: 'Trong vài thập kỉ qua,'
+      },
+      {
+        start: 189.31,
+        end: 192.021,
+        text: 'without drastically increasing its emissions.',
+        id: 61,
+        vietsub: 'nó thành công phát triển kinh tế bền vững, nâng cao chất lượng sống,'
+      },
+      {
+        start: 192.021,
+        end: 194.023,
+        text: 'Other countries, like Colombia and Jordan,',
+        id: 62,
+        vietsub: 'và không cho lượng khí thải tăng mạnh.'
+      },
+      {
+        start: 194.023,
+        end: 195.775,
+        text: 'have made notable progress.',
+        id: 63,
+        vietsub: 'Những nước khác như Colombia hay Jordan,'
+      },
+      {
+        start: 196.025,
+        end: 199.153,
+        text: 'Costa Rica now has better well-being outcomes like life expectancy',
+        id: 64,
+        vietsub: 'cũng đạt được những tiến bộ đáng kể.'
+      },
+      {
+        start: 199.153,
+        end: 201.53,
+        text: 'than some of the world’s richest countries.',
+        id: 65,
+        vietsub: 'Costa Rica nâng cao chất lượng ở các mặt như'
+      },
+      {
+        start: 201.822,
+        end: 204.533,
+        text: 'Ultimately, there are limits to any approach that boils',
+        id: 66,
+        vietsub: 'tuổi thọ trung bình cao hơn một số nước giàu nhất thế giới.'
+      },
+      {
+        start: 204.533,
+        end: 207.37,
+        text: 'the quality of life in a country down to a single number.',
+        id: 67,
+        vietsub: 'Suy cho cùng, luôn có hạn chế'
+      },
+      {
+        start: 207.662,
+        end: 211.332,
+        text: 'Increasingly, experts favor a dashboard approach that lays out all the factors',
+        id: 68,
+        vietsub: 'khi quy chất lượng cuộc sống của một nước về một con số.'
+      },
+      {
+        start: 211.332,
+        end: 212.959,
+        text: 'a single number obscures.',
+        id: 69,
+        vietsub: 'Các chuyên gia ngày càng chuộng cách đánh giá trên nhiều phương diện'
+      },
+      {
+        start: 212.959,
+        end: 216.796,
+        text: 'This approach makes even more sense given that people have different priorities,',
+        id: 70,
+        vietsub: 'hơn là dùng một con số tối nghĩa.'
+      },
+      {
+        start: 216.796,
+        end: 219.215,
+        text: 'and the answer to which country is best to live in',
+        id: 71,
+        vietsub: 'Nếu tự thiết lấp thước đo hạnh phúc cho nước mình,'
+      }
+    ]
+    let mulChoice = [{
+        "id": 1,
+        "answer": " GDP can have an impact on governmental policies. Is it True, False, Not given?",
+        "questions": [{
+            "id": 1,
+            "text": "True"
+          },
+          {
+            "id": 2,
+            "text": "False"
+          },
+          {
+            "id": 3,
+            "text": "Not given"
+          }
+        ],
+        "correct_id": 1,
+        "script_id": 6
+      },
+      {
+        "id": 2,
+        "answer": "Which one of the following is not counted on GDP?",
+        "questions": [{
+            "id": 4,
+            "text": "Weapons"
+          },
+          {
+            "id": 5,
+            "text": "Food"
+          },
+          {
+            "id": 6,
+            "text": "Public schools"
+          }
+        ],
+        "correct_id": 6,
+        "scripts": 22
+      }, {
+        "id": 3,
+        "answer": "What's wrong with GDP per capita when using it as a metric for a country?",
+        "questions": [{
+            "id": 7,
+            "text": "It doesn't tell exactly how much money a typical person has"
+          },
+          {
+            "id": 8,
+            "text": "It isn't measured correctly for the whole country's economy"
+          },
+          {
+            "id": 9,
+            "text": "It has been outdated and is replaced by another index"
+          }
+        ],
+        "correct_id": 7,
+        "scripts": 26,
+      },
+      {
+        "id": 4,
+        "answer": "What does GNH (an index mentioned in the video as an alternative to GDP) stand for?",
+        "questions": [{
+            "id": 10,
+            "text": "Growing National Health"
+          },
+          {
+            "id": 11,
+            "text": "Gross National Health"
+          },
+          {
+            "id": 12,
+            "text": "Gross National Happiness"
+          }
+        ],
+        "correct_id": 12,
+        "scripts": 40,
+      },
+      {
+        "id": 5,
+        "answer": "Which country currently comes closest to meeting the basic needs of its people while using resources sustainably?",
+        "questions": [{
+            "id": 13,
+            "text": "Costa Rica"
+          },
+          {
+            "id": 14,
+            "text": "Colombia"
+          },
+          {
+            "id": 15,
+            "text": "Vietnam"
+          }
+        ],
+        "correct_id": 13,
+        "scripts": 55,
+      }
     ]
     getScript()
+
     function getScript() {
-        let content = ""
-        data.forEach(item => {
-            content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
-                <input class="d-none" type="radio" name="Script"  id="radio-${item.id}">
-                <song-info>
-                            <b>${item.text}</b>
-                        </song-info>
-                        <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
-                    </song>
-                    `
-        });
-        $("#lyric-container").html(content)
-        let playList = document.getElementsByClassName('playlist');
+      let content = ""
+      data.forEach(item => {
+        content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
+                  <input class="d-none" type="radio" name="Script"  id="radio-${item.id}">
+                  <song-info>
+                    <song-details class="allsub">
+
+                              <b class="engsub d-block">${item.text}</b>
+                              <x class="vietsub">${item.vietsub}</x>
+</song-details>
+                          </song-info>
+                          <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
+                      </song>
+                      `
+      });
+      $("#lyric-container").html(content)
+      let playList = document.getElementsByClassName('playlist');
     }
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/player_api";
@@ -572,110 +1110,142 @@
     var videoId = "EqJcNnijmdQ"
 
     function onYouTubePlayerAPIReady() {
-        player = new YT.Player('ytplayer', {
-            height: '288',
-            width: '512',
-            videoId: videoId,
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            },
+      player = new YT.Player('ytplayer', {
+        height: '288',
+        width: '512',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        },
 
-        });
+      });
     }
     // 2. get player.playerInfo.currentTime
     const subtitlesContainer = document.getElementById('lyric-container');
-    function scrollSubtitle(currentSubtitle) {
-        const top = currentSubtitle.offsetTop;
-        const height = currentSubtitle.offsetHeight;
-        const containerHeight = subtitlesContainer.offsetHeight;
-        const scrollTop = subtitlesContainer.scrollTop;
-        const scrollBottom = scrollTop + containerHeight;
-        if (top < scrollTop || top + height > scrollBottom) {
-            subtitlesContainer.scrollTo({
-                top: top - containerHeight + height / 2,
-                behavior: 'smooth'
-            });
-        }
+    const vietSubtitlesContainer = document.getElementById('vietsub-container');
 
+    function scrollSubtitle(currentSubtitle, container) {
+      let top = currentSubtitle.offsetTop;
+      let height = currentSubtitle.offsetHeight;
+      let containerHeight = container.offsetHeight;
+      let scrollTop = container.scrollTop;
+      let scrollBottom = scrollTop + containerHeight;
+      if (top < scrollTop || top + height > scrollBottom) {
+        subtitlesContainer.scrollTo({
+          top: top - containerHeight + height / 2,
+          behavior: 'smooth'
+        });
+      }
     }
+    // function vsubScrollSubtitle(vsubCurrentSubtitle) {
+    //   let top = currentSubtitle.offsetTop;
+    //   let height = currentSubtitle.offsetHeight;
+    //   let containerHeight = subtitlesContainer.offsetHeight;
+    //   let scrollTop = subtitlesContainer.scrollTop;
+    //   let scrollBottom = scrollTop + containerHeight;
+    //   if (top < scrollTop || top + height > scrollBottom) {
+    //     subtitlesContainer.scrollTo({
+    //       top: top - containerHeight + height / 2,
+    //       behavior: 'smooth'
+    //     });
+    //   }
+    // }
     let subInterval;
-    function startSubInterval() {
-        subInterval = setInterval(function () {
-            let currentTime = player.playerInfo.currentTime
-            let currentSubtitle = Array.from(subtitlesContainer.children)
-                .find(function (sub) {
-                    const startTime = parseFloat(sub.dataset.start);
-                    const endTime = parseFloat(sub.dataset.end);
-                    return startTime <= currentTime && endTime >= currentTime;
-                });
 
-            if (currentSubtitle) {
-                scrollSubtitle(currentSubtitle)
-                activeScript(currentSubtitle.dataset.id)
-            }
-        }, 500)
+    function startSubInterval() {
+      subInterval = setInterval(function() {
+        let currentTime = player.playerInfo.currentTime
+        let currentSubtitle = Array.from(subtitlesContainer.children)
+          .find(function(sub) {
+            const startTime = parseFloat(sub.dataset.start);
+            const endTime = parseFloat(sub.dataset.end);
+            return startTime <= currentTime && endTime >= currentTime;
+          });
+
+        if (currentSubtitle) {
+          scrollSubtitle(currentSubtitle, subtitlesContainer)
+          activeScript(currentSubtitle.dataset.id)
+        }
+        let vsubCurrentSubtitle = Array.from(vietSubtitlesContainer.children)
+          .find(function(sub) {
+            const startTime = parseFloat(sub.dataset.start);
+            const endTime = parseFloat(sub.dataset.end);
+            return startTime <= currentTime && endTime >= currentTime;
+          });
+
+        if (vsubCurrentSubtitle) {
+          scrollSubtitle(vsubCurrentSubtitle, vietSubtitlesContainer)
+          activeScript(currentSubtitle.dataset.id)
+        }
+      }, 500)
     }
+
     function onPlayerStateChange(event) {
-        // If the video starts playing (state = 1), execute setInterval
-        if (event.data == YT.PlayerState.PLAYING) {
-            startSubInterval()
-        }
-        // If the video is paused (state = 2), clear the interval
-        else if (event.data == YT.PlayerState.PAUSED) {
-            clearInterval(subInterval);
-        }
+      // If the video starts playing (state = 1), execute setInterval
+      if (event.data == YT.PlayerState.PLAYING) {
+        startSubInterval()
+      }
+      // If the video is paused (state = 2), clear the interval
+      else if (event.data == YT.PlayerState.PAUSED) {
+        clearInterval(subInterval);
+      }
     }
-    $("#lyric-container").scroll(function (event) {
-        // clearInterval(subInterval)
-        // setTimeout(() => {
-        // startSubInterval()
-        // }, 3000);
+    $("#lyric-container").scroll(function(event) {
+      // clearInterval(subInterval)
+      // setTimeout(() => {
+      // startSubInterval()
+      // }, 3000);
     })
+    $(" ")
+
     function activeScript(id) {
-        $(`#radio-${id}`).prop("checked", "checked");
-        $(".song").removeClass('song-active');
-        $(`#song-${id}`).addClass('song-active');
-        $(".song-heart").removeClass('ph-heart-straight-fill');
-        $(".song-heart").addClass('ph-heart-straight');
-        $(`#song-heart-${id}`).addClass('ph-heart-straight-fill');
+      $(`#radio-${id}`).prop("checked", "checked");
+      $(".song").removeClass('song-active');
+      $(`#song-${id}`).addClass('song-active');
+      $(".song-heart").removeClass('ph-heart-straight-fill');
+      $(".song-heart").addClass('ph-heart-straight');
+      $(`#song-heart-${id}`).addClass('ph-heart-straight-fill');
     }
+
+
     function onPlayerReady(event) {
-        let start = subtitlesContainer.children[0].dataset.start
-        let id = subtitlesContainer.children[0].dataset.id
-        player.seekTo(parseFloat(start)); // Start playing at 30 seconds
+      let start = subtitlesContainer.children[0].dataset.start
+      let id = subtitlesContainer.children[0].dataset.id
+      player.seekTo(parseFloat(start)); // Start playing at 30 seconds
+      activeScript(id)
+      $('song').click(function(e) {
+        let id = $(this).attr('data-id');
+        let start = $(this).attr('data-start');
         activeScript(id)
-        $('song').click(function (e) {
-            let id = $(this).attr('data-id');
-            let start = $(this).attr('data-start');
-            activeScript(id)
-            player.seekTo(parseFloat(start)); // Start playing at 30 seconds
-            player.playVideo();
-        })
+        player.seekTo(parseFloat(start)); // Start playing at 30 seconds
+        player.playVideo();
+      })
+
     }
 
     function random(quantity) {
-        // Set the minimum and maximum values for the range
-        var min = 0;
-        let max = data.length
-        // var max = 30;
+      // Set the minimum and maximum values for the range
+      var min = 0;
+      let max = data.length
+      // var max = 30;
 
-        // Create an empty array to store the random numbers
-        var randomNumbers = [];
+      // Create an empty array to store the random numbers
+      var randomNumbers = [];
 
-        // Loop until we've added 15 unique random numbers
-        while (randomNumbers.length < quantity) {
-            // Generate a random number between min and max, inclusive
-            var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      // Loop until we've added 15 unique random numbers
+      while (randomNumbers.length < quantity) {
+        // Generate a random number between min and max, inclusive
+        var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-            // Check whether the random number is already in the array
-            if (!randomNumbers.includes(randomNumber)) {
-                // If not, add it to the array
-                randomNumbers.push(randomNumber);
-            }
+        // Check whether the random number is already in the array
+        if (!randomNumbers.includes(randomNumber)) {
+          // If not, add it to the array
+          randomNumbers.push(randomNumber);
         }
-        // Log the array of random numbers to the console
-        return randomNumbers
+      }
+      // Log the array of random numbers to the console
+      return randomNumbers
     }
     let quantity = 2
     // let arrRandom = random(quantity)
@@ -684,140 +1254,158 @@
     let dataQuiz = JSON.parse(JSON.stringify(data));
     let arrAnswer = []
     quiz()
+
     function quiz() {
-        dataQuiz.forEach(item => {
-            if (arrRandom.findIndex(function (element) {
-                return element === item.id;
-            }) !== -1) {
-                // If it does, add it to the matchingIds array
-                let arrScript = item.text.split(" ")
-                let min = 0
-                let randomNumber = Math.floor(Math.random() * (arrScript.length - min + 1)) + min;
-                let object = {
-                    "id": item.id,
-                    "val": arrScript[randomNumber],
-                    "index": randomNumber
-                }
-                arrScript[randomNumber] = null
-                item.flag = randomNumber
-                item.text = arrScript
-                arrAnswer.push(object)
-            }
-        });
+      dataQuiz.forEach(item => {
+        if (arrRandom.findIndex(function(element) {
+            return element === item.id;
+          }) !== -1) {
+          // If it does, add it to the matchingIds array
+          let arrScript = item.text.split(" ")
+          let min = 0
+          let randomNumber = Math.floor(Math.random() * (arrScript.length - min + 1)) + min;
+          let object = {
+            "id": item.id,
+            "val": arrScript[randomNumber],
+            "index": randomNumber
+          }
+          arrScript[randomNumber] = null
+          item.flag = randomNumber
+          item.text = arrScript
+          arrAnswer.push(object)
+        }
+      });
     }
     getQuiz()
+
     function getQuiz() {
-        let content = ""
-        dataQuiz.forEach(item => {
-            let text = ""
-            if (typeof item.text == "string") {
-                text = `<b>${item.text}</b>`
+      let content = ""
+      dataQuiz.forEach(item => {
+        let text = ""
+        if (typeof item.text == "string") {
+          text = `<b>${item.text}</b>`
+        } else {
+          // console.log(item.id);
+          // console.log(item.script)
+          let flag = item.flag
+          text += '<b>'
+          item.text.forEach((element, index) => {
+            if (index === flag) {
+              text += `</b>
+                                  <input  data-id ="${item.id}" type="text" id="question-${item.id}" 
+                                  class="form-control w-40 input-answer">
+                                  <b>
+                                      `
             } else {
-                // console.log(item.script)
-                let flag = item.flag
-                text += '<b>'
-                item.text.forEach((element, index) => {
-                    if (index === flag) {
-                        text += `</b>
-                                <input  data-id ="${item.id}" type="text" id="question-${item.id}" 
-                                class="form-control w-50 input-answer">
-                                <b>
-                                    `
-                    }
-                    else {
-                        text += element + " "
-                    }
-
-                });
-                text += `</b>`
-
+              text += element + " "
             }
-            content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
-                            <input class="d-none" type="radio" name="Script"    id="radio-${item.id}">
-                            <song-info>
-                                <song-details>
-                                    ${text}
-                                </song-details>
-                                <x class="d-none" id="invalid-${item.id}">OKOKOK</x>
-                            </song-info>
-                            <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
-                        </song>`
-        });
-        $("#quiz-container").html(content)
-        let text = `<x>Đáp án đúng: </x><b>0/${quantity}</b>`
-        $(".test-info").html(text)
+
+          });
+          text += `</b>`
+
+        }
+        content += `<song data-id="${item.id}" id="song-${item.id}" class="song lyric-row" data-start="${item.start}" data-end="${item.end}" >
+                              <input class="d-none" type="radio" name="Script"    id="radio-${item.id}">
+                              <song-info>
+                                  <song-details>
+                                      ${text}
+                                  </song-details>
+                                  <x class="d-none" id="invalid-${item.id}">OKOKOK</x>
+                              </song-info>
+                              <i class="song-heart ph-heart-straight" id="song-heart-${item.id}"></i>
+                          </song>`
+      });
+      $("#quiz-container").html(content)
+      let text = `<x >Đáp án đúng: </x><b>0/${quantity}</b>`
+
+      $(".test-info").html(text)
+      dataQuiz.forEach(function(item) {
+        if (typeof item.text != "string") {
+          console.log(item.id);
+          activeScript(item.id)
+        }
+      })
     }
     let arrAnswerUsers = []
     $("#count-answer").text(arrAnswerUsers.length + "/15")
-    $(".input-answer").keyup(function (event) {
-        let id = $(this).data("id");
-        let val = $(`#question-${id}`).val();
-        if (val === "") {
-            let index = arrAnswerUsers.findIndex(item => item.id === id);
-            if (index !== -1) {
-                arrAnswerUsers.splice(index, 1)
-            }
-        } else {
-            let result = arrAnswerUsers.find(item => item.id === id);
-            if (result) {
-                result.val = val
-            } else {
-                let obj = {
-                    id: id,
-                    val: val
-                }
-                arrAnswerUsers.push(obj);
-            }
+    $(".input-answer").keyup(function(event) {
+      let id = $(this).data("id");
+      let val = $(`#question-${id}`).val();
+      if (val === "") {
+        let index = arrAnswerUsers.findIndex(item => item.id === id);
+        if (index !== -1) {
+          arrAnswerUsers.splice(index, 1)
         }
-        countAnswer()
+      } else {
+        let result = arrAnswerUsers.find(item => item.id === id);
+        if (result) {
+          result.val = val
+        } else {
+          let obj = {
+            id: id,
+            val: val
+          }
+          arrAnswerUsers.push(obj);
+        }
+      }
+      countAnswer()
     })
-    function countAnswer() {
-        let count = arrAnswerUsers.length
-        let content = `<x>Đã trả lời: </x><b>${count}/${quantity}</b>`
-        $(".test-info").html(content)
-        if (count == 2) {
-            $('.btn-check').removeAttr("disabled");
-        } else {
-            $('.btn-check').attr("disabled", true);
-        }
-    }
-    $('.btn-check').click(function () {
-        let arrIncorrect = []
-        let arrCorrect = []
-        let numberCorrect = 0
-        arrAnswer.forEach(item1 => {
-            arrAnswerUsers.forEach(item2 => {
-                if (item1.id == item2.id) {
-                    if (item1.val.toLowerCase() == item2.val.toLowerCase()) {
-                        numberCorrect++
-                        arrCorrect.push(item1)
-                    } else {
-                        arrIncorrect.push(item1)
-                    }
-                }
-            })
-        })
-        if (arrIncorrect.length > 0) {
-            arrIncorrect.forEach(function (item) {
-                $(`#question-${item.id}`).addClass('is-invalid')
-                $(`#invalid-${item.id}`).removeClass('d-none')
-                $(`#invalid-${item.id}`).text(`Đáp án đúng: ${item.val}`)
-            })
-        }
-        if (arrCorrect.length > 0) {
-            arrCorrect.forEach(function (item) {
-                $(`#question-${item.id}`).addClass('is-valid')
-            })
-        }
-        let content = `<x>Đáp án đúng: </x><b>${numberCorrect}/${quantity}</b>`
-        $(".test-info").html(content)
 
-        // if ()
+    function countAnswer() {
+      let count = arrAnswerUsers.length
+      let content = `<x>Đã trả lời: </x><b>${count}/${quantity}</b>`
+      $(".test-info").html(content)
+      if (count == 2) {
+        $('.btn-check').removeAttr("disabled");
+      } else {
+        $('.btn-check').attr("disabled", true);
+      }
+    }
+    $('.btn-check').click(function() {
+      $('.btn-check').attr("disabled", true);
+
+      let arrIncorrect = []
+      let arrCorrect = []
+      let numberCorrect = 0
+      arrAnswer.forEach(item1 => {
+        arrAnswerUsers.forEach(item2 => {
+          if (item1.id == item2.id) {
+            if (item1.val.toLowerCase() == item2.val.toLowerCase()) {
+              numberCorrect++
+              arrCorrect.push(item1)
+            } else {
+              arrIncorrect.push(item1)
+            }
+          }
+        })
+      })
+      if (arrIncorrect.length > 0) {
+        arrIncorrect.forEach(function(item) {
+          $(`#question-${item.id}`).addClass('is-invalid')
+          $(`#invalid-${item.id}`).removeClass('d-none')
+          $(`#invalid-${item.id}`).text(`Đáp án đúng: ${item.val}`)
+        })
+      }
+      if (arrCorrect.length > 0) {
+        arrCorrect.forEach(function(item) {
+          $(`#question-${item.id}`).addClass('is-valid')
+        })
+      }
+      let content = `<x>Đáp án đúng: </x><b>${numberCorrect}/${quantity}</b>`
+      $(".test-info").html(content)
+
     })
-    // What’s the best country in the world to live in?
-    //Is it the one with the best food? The longest life expectancy?
-</script>
-<script src="tab.js"></script>
-<script src="playlist.js"></script>
+    $("#press-engsub").click(function(event) {
+      $(".engsub").toggleClass('d-none')
+      $(".engsub").toggleClass('d-block')
+    })
+    $("#press-vietsub").click(function(event) {
+      $(".vietsub").toggleClass('d-none')
+    })
+  </script>
+  <script src="tab.js"></script>
+  <script src="playlist.js"></script>
+
+</body>
 
 </html>
